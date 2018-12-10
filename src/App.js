@@ -6,6 +6,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import OneUser from './OneUser';
+import Friends from './Friends';
 // Router watches the URL for changes
 // Route renders components based on the specific URL
 // Link changes the URL
@@ -19,6 +20,12 @@ class App extends Component {
         Lorenzo: ['lorenzo@mail.com'],
         Joan: ['joan@aol.com'],
         Esmerelda: ['esme@relda.com']
+      },
+      userFriends: {
+        Jeff: ['John', 'Joan', 'Jesus'],
+        Lorenzo: ['Jeff', 'Esmerelda', 'Jan'],
+        Joan: ['Raymond', 'Jeff'],
+        Esmerelda: ['Lorenzo', 'Raymond']
       }
     };
   }
@@ -41,6 +48,14 @@ class App extends Component {
             path='/users/:name'
             render={props => {
               return <OneUser array={this.state.userList} {...props} />;
+            }}
+          />
+          <Route
+            path='/users/:name/friends'
+            render={props => {
+              return (
+                <Friends userFriends={this.state.userFriends} {...props} />
+              );
             }}
           />
         </div>
