@@ -4,6 +4,8 @@ import About from './About';
 import Users from './Users';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Navbar from './Navbar';
+import OneUser from './OneUser';
 // Router watches the URL for changes
 // Route renders components based on the specific URL
 // Link changes the URL
@@ -13,20 +15,11 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
-          <nav>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/about'>About</Link>
-            </li>
-            <li>
-              <Link to='/users'>Users</Link>
-            </li>
-          </nav>
+          <Navbar />
           <Route path='/' exact component={Home} />
           <Route path='/about' component={About} />
           <Route path='/users' component={Users} />
+          <Route path='/users/:name' component={OneUser} />
         </div>
       </Router>
     );
