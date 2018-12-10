@@ -1,7 +1,13 @@
 import React from 'react';
 
 function OneUser(props) {
-  return <h2>{props.match.params.name}</h2>;
+  const name = props.match.params.name;
+  return (
+    <div>
+      <h2>{name}</h2>
+      <h5>{props.array[name]}</h5>
+    </div>
+  );
 }
 
 export default OneUser;

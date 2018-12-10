@@ -12,14 +12,6 @@ function Navbar(props) {
       </li>
       <li>
         <Link to='/users'>Users</Link>
-        <ul>
-          <li>
-            <Link to='/users/jeff'>Jeff</Link>
-          </li>
-          <li>
-            <Link to='/users/lorenzo'>Lorenzo</Link>
-          </li>
-        </ul>
       </li>
     </nav>
   );
